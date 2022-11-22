@@ -41,7 +41,7 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 int _puts(char *str);
 
-int (*get_print(char s))(va_list, flags_t *);
+int (select_print(char s))(va_list, flags_t *);
 
 int print_char(va_list l, flags_t *f);
 int print_string(va_list l, flags_t *f);
