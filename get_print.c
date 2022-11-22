@@ -10,7 +10,7 @@
  * printing function
  * Return: a pointer to the matching printing function
  */
-int (select_print(char s))(va_list, flags_t *)
+int (*get_print(char s))(va_list, flags_t *)
 {
 	ph spec_func[] = {
 		{'i', print_int},
@@ -33,7 +33,11 @@ int (select_print(char s))(va_list, flags_t *)
 	register int i;
 
 	for (i = 0; i < count; i++)
+	{
 		if (spec_func[i].c == s)
+		{
 			return (spec_func[i].f);
+		}
+	}
 	return (NULL);
 }

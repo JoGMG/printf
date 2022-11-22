@@ -32,14 +32,10 @@ int _printf(const char *format, ...)
 		{
 			p++;
 			if (*p == '%')
-			{
 				count += _putchar('%');
 				continue;
-			}
 			while (get_flag(*p, &flags))
-			{
 				p++;
-			}
 			pfunc = get_print(*p);
 			count += (pfunc)
 				? pfunc(arguments, &flags)
