@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
 			{
 				p++;
 			}
-			pfunc = select_print(*p);
+			pfunc = get_print(*p);
 			count += (pfunc)
 				? pfunc(arguments, &flags)
 				: _printf("%%%c", *p);
