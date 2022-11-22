@@ -1,44 +1,36 @@
 #include "main.h"
 
 /**
- * print_char - prints character.
- * @list: list of arguments.
- * Return: the amount of characters and return 1 (success) always.
-**/
-int print_char(va_list list)
+ * print_string - loops through a string and prints
+ * every character
+ * @l: va_list arguments from _printf
+ * @f: pointer to the struct flags that determines
+ * if a flag is passed to _printf
+ * Return: number of char printed
+ */
+int print_string(va_list l, flags_t *f)
 {
-	_write_char(va_arg(list, int));
-	return (1);
+    char *s = va_arg(l, char *);
+
+    (void)f;
+
+    if (!s)
+    {
+        s = "(null)";
+    }
+    return (_puts(s));
 }
 
 /**
- * print_string - prints string.
- * @list: list of arguments.
- * Return: the amount of characters.
-**/
-int print_string(va_list list)
+ * print_char - prints a character
+ * @l: va_list arguments from _printf
+ * @f: pointer to the struct flags that determines
+ * if a flag is passed to _printf
+ * Return: number of char printed
+ */
+int print_char(va_list l, flags_t *f)
 {
-	int i;
-	char *str;
-
-	if (str == NULL)
-	{
-		str = "(null)";
-	}
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		_write_char(str[i]);
-	}
-	return (i);
-}
-
-/**
- * print_percent - prints percent symbol.
- * @list: list of arguments.
- * Return: the amount of characters.
-**/
-int print_percent(__attribute__((unused))va_list list)
-{
-	_write_char('%');
-	return (1);
+    (void)f;
+    _putchar(va_arg(l, int));
+    return (1);
 }
