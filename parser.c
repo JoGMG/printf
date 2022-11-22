@@ -32,8 +32,8 @@ int parser(const char *format, sym_func f_list[], va_list arg_list)
 			{
 				if (format[i + 1] != '\0')
 				{
-					write_char(format[i]);
-					write_char(format[i + 1]);
+					_write_char(format[i]);
+					_write_char(format[i + 1]);
 					printed_chars = printed_chars + 2;
 				}
 				else
@@ -43,7 +43,7 @@ int parser(const char *format, sym_func f_list[], va_list arg_list)
 		}
 		else
 		{
-			write_char(format[i]); /* write it as it is*/
+			_write_char(format[i]); /* write it as it is*/
 			printed_chars++;
 		}
 	}

@@ -21,7 +21,7 @@ typedef struct symfunc sym_func;
 /* Functions */
 int _printf(const char *format, ...);
 int parser(const char *format, sym_func f_list[], va_list arg_list);
-int write_char(char);
+int _write_char(char);
 int print_char(va_list);
 int print_string(va_list);
 int print_percent(va_list);
