@@ -10,7 +10,7 @@
  * printing function
  * Return: a pointer to the matching printing function
  */
-int (*get_print(char s))(va_list, flags_t *)
+int (select_print(char s))(va_list, flags_t *)
 {
 	ph spec_func[] = {
 		{'i', print_int},
