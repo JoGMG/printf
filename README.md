@@ -1,3 +1,2 @@
-# 0x11. C - printf
-
-My Frist Group Project as an ALX Student in C language.
+﻿# 0x11. C - printf
+My first team project as an ALX Student.
