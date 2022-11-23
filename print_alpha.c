@@ -15,9 +15,7 @@ int print_string(va_list l, flags_t *f)
 	(void)f;
 
 	if (!s)
-	{
 		s = "(null)";
-	}
 	return (_puts(s));
 }
 
