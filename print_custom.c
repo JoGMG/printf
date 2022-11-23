@@ -18,7 +18,9 @@ int print_bigS(va_list l, flags_t *f)
 
 	(void)f;
 	if (!s)
+	{
 		return (_puts("(null)"));
+	}
 
 	for (i = 0; s[i]; i++)
 	{
@@ -28,11 +30,15 @@ int print_bigS(va_list l, flags_t *f)
 			count += 2;
 			res = convert(s[i], 16, 0);
 			if (!res[1])
+			{
 				count += _putchar('0');
+			}
 			count += _puts(res);
 		}
 		else
+		{
 			count += _putchar(s[i]);
+		}
 	}
 	return (count);
 }
@@ -51,14 +57,17 @@ int print_rev(va_list l, flags_t *f)
 
 	(void)f;
 	if (!s)
+	{
 		s = "(null)";
-
+	}
 	while (s[i])
+	{
 		i++;
-
+	}
 	for (j = i - 1; j >= 0; j--)
+	{
 		_putchar(s[j]);
-
+	}
 	return (i);
 }
 
@@ -80,7 +89,9 @@ int print_rot13(va_list l, flags_t *f)
 	for (j = 0; s[j]; j++)
 	{
 		if (s[j] < 'A' || (s[j] > 'Z' && s[j] < 'a') || s[j] > 'z')
+		{
 			_putchar(s[j]);
+		}
 		else
 		{
 			for (i = 0; i <= 52; i++)
@@ -90,7 +101,6 @@ int print_rot13(va_list l, flags_t *f)
 			}
 		}
 	}
-
 	return (j);
 }
 
